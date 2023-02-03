@@ -1,0 +1,17 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+}
+
+.tempContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tempLeft, .tempRigth{
+    text-align: center;
+    padding: 10px;
+}
