@@ -1,20 +1,20 @@
-import React from "react";
+import styles from './Card.module.css'
 
-const Card = ({name, max, min, img}) => {
+const Card = ({ name, max, min, img }) => {
   return (
-    <div>
-        <button>X</button>
-      <p>{name}</p>
-      <div>
-        <div>
-          <p>Min</p>
+    <div className={styles.card}>
+        {/* <button>X</button> */}
+        <p>{name}</p>
+        <img src={`http://openweathermap.org/img/wn/${img}@2x.png`} alt="" />
+      <div className={styles.tempContainer}>
+        <div className={styles.tempLeft}>
+          <p>Min:</p>
           <p>{min}</p>
         </div>
-        <div>
-          <p>Max</p>
+        <div className={styles.tempRigth}>
+          <p>Max:</p>
           <p>{max}</p>
         </div>
-        <img src={`http://openweathermap.org/img/wn/${img}@2x.png`} alt="" />
       </div>
     </div>
   );

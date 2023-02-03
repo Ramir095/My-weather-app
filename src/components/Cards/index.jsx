@@ -1,9 +1,10 @@
 import React from "react";
 import Card from "../Card";
+import styles from './Cards.module.css'
 
 const Cards = ({ data }) => {
   return (
-    <div>
+    <div className={styles.cards}>
       {data &&
         data.map((c) => (
           <Card
