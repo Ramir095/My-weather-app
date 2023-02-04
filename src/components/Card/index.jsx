@@ -1,10 +1,13 @@
-import styles from './Card.module.css'
+import styles from './Card.module.css';
+import { IoAddCircleOutline } from "react-icons/io5";
 
-const Card = ({ name, max, min, img }) => {
+const Card = ({ name, max, min, img, primary }) => {
   return (
-    <div className={styles.card}>
-        {/* <button>X</button> */}
-        <p>{name}</p>
+    <div className={`${styles.card} ${ primary ? styles.primary : "" }`}> {/* Importante */}
+        <p className={styles.name}>
+          {name}
+          <button className={styles.buttonX}><IoAddCircleOutline /></button>
+        </p>
         <img src={`http://openweathermap.org/img/wn/${img}@2x.png`} alt="" />
       <div className={styles.tempContainer}>
         <div className={styles.tempLeft}>

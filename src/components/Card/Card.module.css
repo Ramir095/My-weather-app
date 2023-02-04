@@ -1,17 +1,76 @@
 .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  border-left: solid 1px #0000001e;
+}
+
+/* .card + .card {  si tienes una card al lado tuyo 
+}*/
+.card > img {
+  width: 5rem;
+  height: 5rem;
+}
+
+.primary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 5vh 15vh;
+  width: 20rem;
+  margin: 18px;
+  border: none;
+}
+
+.primary > p {
+    grid-column: 1 / p 2;
+}
+
+.primary > img {
+    width: 8rem;
+    height: 8rem;
+}
+
+.name {
+  background-color: #0000005e;
+  padding: 5px 15px;
+  border-radius: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.buttonX {
+  border: solid 2px transparent;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: transparent;
+  transition: background-color 0.25s;
+  cursor: pointer;
+  color: white;
+  font-size: 1.9rem;
+  margin-left: 0.5rem;
+  margin-right: -0.2rem;
+}
+
+.buttonX:hover{
+  background-color: #ffffff60;
 }
 
 .tempContainer {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
-.tempLeft, .tempRigth{
-    text-align: center;
-    padding: 10px;
+.tempLeft,
+.tempRigth {
+  text-align: center;
+  padding: 0 10px;
 }
