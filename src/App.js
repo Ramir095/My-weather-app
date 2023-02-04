@@ -1,7 +1,8 @@
 import Cards from "./components/Cards";
 import SearchBar from "./components/SearchBar";
-import data from "./data.js";
+import Card from "./components/Card";
 import styles from "./App.module.css";
+import data, { Cairns } from "./data.js";
 
 function App() {
   return (
@@ -12,9 +13,14 @@ function App() {
             <SearchBar onSearch={(ciudad) => alert(ciudad)} />
           </div>
           <div className={styles.citiesContainer}>
-            <div>
-              <Cards data={data} />
-            </div>
+            <Card
+              primary //React le da valor: true con default cuando se manda un atributo sin valor
+              name={Cairns.name}
+              img={Cairns.weather[0].icon}
+              max={Cairns.main.temp_max}
+              min={Cairns.main.temp_min}
+            />
+            <Cards data={data} />
           </div>
         </div>
       </div>

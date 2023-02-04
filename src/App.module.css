@@ -19,7 +19,7 @@
 }
 
 .box {
-  width: 85vw;
+  width: 75vw;
   height: 75vh;
   position: absolute;
   border: 2px solid white;
@@ -31,7 +31,10 @@
 }
 
 .citiesContainer {
+  display: flex;
+  color: white;
   height: 25vh;
   background-color: #ffffff78;
   backdrop-filter: blur(16px);
+  justify-content: space-between;
 }
