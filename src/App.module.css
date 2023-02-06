@@ -22,7 +22,7 @@
   width: 75vw;
   height: 75vh;
   position: absolute;
-  border: 2px solid white;
+  /* border: 2px solid white; */
   border-radius: 1rem;
   overflow: hidden;
   display: grid;
@@ -33,7 +33,7 @@
 .citiesContainer {
   display: flex;
   color: white;
-  height: 25vh;
+  height: 25.5vh;
   background-color: #ffffff78;
   backdrop-filter: blur(16px);
   justify-content: space-between;

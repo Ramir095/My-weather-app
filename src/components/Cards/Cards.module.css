@@ -1,3 +1,6 @@
 .cards {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25vh;
 }
