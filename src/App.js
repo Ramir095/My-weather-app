@@ -8,7 +8,11 @@ const apiKey = "4ae2636d8dfbdc3044bede63951a019b";
 
 function App() {
   const [cities, setCities] = useState([]);
-  console.log("ciudades actualizadas", cities);
+
+  const handleDelete = (id) => {
+    const newCities = cities.filter(c => c.id !== id);
+    setCities(newCities);
+  };
 
   function onSearch(ciudad) {
     try {
@@ -63,7 +67,7 @@ function App() {
               />
               : <h1 style={{ color:"black", display:"flex", justifyContent: "center", alignItems:"center", width:"100%" }}>No se encontraron ciudades</h1>
             }
-            <Cards cities={cities} />
+            <Cards cities={cities} handleDelete={handleDelete} />
           </div>
         </div>
       </div>

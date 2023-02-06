@@ -2,7 +2,7 @@ import React from "react";
 import Card from "../Card";
 import styles from './Cards.module.css'
 
-const Cards = ({ cities }) => {
+const Cards = ({ cities, handleDelete }) => {
   return (
     <div className={styles.cards}>
       {cities &&
@@ -13,6 +13,7 @@ const Cards = ({ cities }) => {
            max={c.max}
            min={c.min}
            img={c.img}
+           handleDelete={() => handleDelete(c.id)}
            />
         ))}
     </div>
