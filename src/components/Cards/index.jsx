@@ -2,17 +2,18 @@ import React from "react";
 import Card from "../Card";
 import styles from './Cards.module.css'
 
-const Cards = ({ data }) => {
+const Cards = ({ cities, handleDelete }) => {
   return (
     <div className={styles.cards}>
-      {data &&
-        data.map((c) => (
+      {cities &&
+        cities.map((c) => (
           <Card
            key={c.id}
            name={c.name}
-           max={c.main.temp_max}
-           min={c.main.temp_min}
-           img={c.weather[0].icon}
+           max={c.max}
+           min={c.min}
+           img={c.img}
+           handleDelete={() => handleDelete(c.id)}
            />
         ))}
     </div>

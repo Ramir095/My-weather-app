@@ -19,7 +19,7 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 5vh 15vh;
   width: 20rem;
-  margin: 18px;
+  margin: 21px;
   border: none;
 }
 
@@ -57,7 +57,7 @@
   color: white;
   font-size: 1.9rem;
   margin-left: 0.5rem;
-  margin-right: -0.2rem;
+  margin-right: -0.4rem;
 }
 
 .buttonX:hover{
