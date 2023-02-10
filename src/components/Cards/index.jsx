@@ -11,7 +11,7 @@ const Cards = ({ cities, handleDelete }) => {
            key={c.id}
            name={c.name}
            max={c.max}
-           min={c.min}
+           min={c.min - 6}
            img={c.img}
            handleDelete={() => handleDelete(c.id)}
            />
