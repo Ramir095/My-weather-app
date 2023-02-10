@@ -20,7 +20,7 @@ function App() {
 
     if (cityFound) return alert("la ciudad ya existe");
     
-    if(cities.length >= 5){
+    if(cities.length >= 4){
       cities.shift()
     }
 

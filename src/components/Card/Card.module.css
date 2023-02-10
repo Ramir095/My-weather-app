@@ -20,7 +20,7 @@
   grid-template-rows: repeat(2, 80px);
   grid-auto-rows: 95px;
   width: 17rem;
-  margin: 25px;
+  margin: 30px 25px;
   border: none;
 }
 
