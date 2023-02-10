@@ -23,8 +23,8 @@ function App() {
     if(cities.length >= 4){
       cities.shift()
     }
-
-    apiFuntion(ciudad, setCities)
+    
+    return apiFuntion(ciudad, setCities)
   }
 
   const lastCity = cities[cities.length - 1];

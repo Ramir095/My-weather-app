@@ -11,8 +11,6 @@ const Card = ({
   speed,
   humidity,
 }) => {
-  console.log("datos", speed);
-  console.log("datos", humidity);
   return (
     <div className={`${styles.card} ${primary ? styles.primary : ""}`}> {/* Importante */}
       <p className={styles.name}>
