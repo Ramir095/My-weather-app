@@ -1,40 +1,66 @@
 .searchBar {
-    display: flex;
-    margin: 1.5rem;
+  display: flex;
+  margin: 1.1rem 1.5rem;
+  justify-content: space-between;
+}
+
+.inputAndButton {
+  display: flex;
 }
 
 .input {
-    background-color: transparent;
-    border: none;
-    color: #ffffff;
-    font-size: 1.5rem;
-    font-weight: 300;
-    width: 20rem;
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 300;
+  width: 20rem;
 }
 
 .input:focus {
-    outline: none;
+  outline: none;
 }
 
 .input::placeholder {
-    color: #ffffff85;
+  color: #ffffff85;
 }
 
 .button {
-    border: solid 2px transparent;
-    border-radius: 50px;
-    width: 3rem;
-    height: 3rem;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
-    color: white;
-    transition: background-color 0.25s;
-    cursor: pointer;
+  border: solid 2px transparent;
+  border-radius: 50px;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: white;
+  transition: background-color 0.25s;
+  cursor: pointer;
 }
 
 .button:hover {
-    background-color: #ffffff60;
+  background-color: #ffffff60;
+}
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+}
+
+.buttonsRight {
+  background-color: transparent;
+  font-size: 1.1rem;
+  padding: 8px 15px;
+  border: 0.5px solid #ffffff60;
+  color: white;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.buttonsRight:hover {
+  background-color: #ffffff60;
+  /* background-color: #0000005e; */
+  transition: background-color 0.25s;
 }
