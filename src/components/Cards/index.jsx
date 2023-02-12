@@ -9,12 +9,13 @@ const Cards = ({ cities, handleDelete }) => {
         cities.map((c) => (
           <Card
            key={c.id}
+           id={c.id}
            name={c.name}
            max={c.max}
            min={c.min - 6}
            img={c.img}
            handleDelete={() => handleDelete(c.id)}
-           />
+          />
         ))}
     </div>
   );

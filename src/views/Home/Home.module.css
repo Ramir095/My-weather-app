@@ -1,0 +1,12 @@
+.citiesContainer {
+  color: white;
+  height: 25.5vh;
+  background-color: #ffffff78;
+  backdrop-filter: blur(16px);
+}
+
+.inTheContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 5px;
+}

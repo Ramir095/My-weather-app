@@ -1,5 +1,6 @@
 import styles from "./Card.module.css";
 import { IoAddCircleOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const Card = ({
   name,
@@ -10,11 +11,14 @@ const Card = ({
   handleDelete,
   speed,
   humidity,
+  id
 }) => {
   return (
     <div className={`${styles.card} ${primary ? styles.primary : ""}`}> {/* Importante */}
-      <p className={styles.name}>
+    <div className={styles.name}>
+      <Link to={`/city/${id}`}>
         {name}
+      </Link>
         {
           primary 
             ? "" 
@@ -22,7 +26,8 @@ const Card = ({
                 <IoAddCircleOutline />
               </button>
         }
-      </p>
+      
+    </div>
       <img src={`http://openweathermap.org/img/wn/${img}@2x.png`} alt="" />
       <div className={styles.tempContainer}>
         { primary 

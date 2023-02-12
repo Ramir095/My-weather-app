@@ -1,9 +1,12 @@
-import Cards from "./components/Cards";
-import SearchBar from "./components/SearchBar";
-import Card from "./components/Card";
-import styles from "./App.module.css";
 import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import styles from "./App.module.css";
+import About from "./components/About";
+import CityDetails from "./components/CityDetails";
+import LandingPage from "./components/LandingPage";
+
 import { apiFuntion } from './controllers/api'
+import Home from "./views/Home";
 
 function App() {
   const [cities, setCities] = useState([]);
@@ -17,14 +20,13 @@ function App() {
     const cityFound = cities.some(
       (c) => c.name.toLowerCase() === ciudad.toLowerCase()
     );
-
     if (cityFound) return alert("la ciudad ya existe");
     
-     apiFuntion(ciudad, setCities)
-     
-     if(cities.length >= 4){
+    if(cities.length >= 4){
       cities.shift()
     }
+
+     apiFuntion(ciudad, setCities)
   }
 
   const lastCity = cities[cities.length - 1];
@@ -33,37 +35,12 @@ function App() {
     <div className={styles.app}>
       <div className={styles.background}>
         <div className={styles.box}>
-          <div>
-            <SearchBar onSearch={onSearch} />
-          </div>
-          <div className={styles.citiesContainer}>
-            <div className={styles.inTheContainer}>
-              {lastCity ? (
-                <Card
-                  primary //React le da valor: true con default cuando se manda un atributo sin valor
-                  name={lastCity.name}
-                  img={lastCity.img}
-                  max={lastCity.max}
-                  min={lastCity.min}
-                  speed={lastCity.wind} // viento en km/h
-                  humidity={lastCity.humidity} // humedad
-                />
-              ) : (
-                <h1
-                  style={{
-                    color: "black",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    width: "100%",
-                  }}
-                >
-                  No se encontraron ciudades
-                </h1>
-              )}
-              <Cards cities={cities} handleDelete={handleDelete} />
-            </div>
-          </div>
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/home" element={<Home handleDelete={handleDelete} onSearch={onSearch} lastCity={lastCity} cities={cities} />}/>
+            <Route path="/about" element={<About />} />
+            <Route path="/city/:id" element={<CityDetails />}/>
+          </Routes>
         </div>
       </div>
     </div>
