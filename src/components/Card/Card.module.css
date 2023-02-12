@@ -5,13 +5,18 @@
   align-items: center;
   width: 10rem;
   border-left: solid 1px #0000001e;
+  cursor: pointer;
 }
 
-/* .card + .card {  si tienes una card al lado tuyo 
-}*/
-.card > img {
+.cardImg {
   width: 5rem;
   height: 5rem;
+}
+
+.cardHover:hover {
+  background-color: #ffffff30;
+  transition: 1s;
+  padding: 22px 0px;
 }
 
 .primary {
@@ -27,11 +32,9 @@
 .primary > .name {
     order: 1;
     justify-content: center;
-    /* width: 15vh; */
-    /* margin-left: 35px; */
 }
 
-.primary > img {
+.primaryImg {
     width: 12rem;
     height: 12rem;
     order: -1;
@@ -39,7 +42,6 @@
 }
 
 .primary > .tempContainer{
-  /* background-color: red; */
   order: -3;
   font-size: 6rem;
   display: flex;
@@ -54,6 +56,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.cardSelector:hover {
+  background-color: #ffffff30;
+  transition: 1s;
 }
 
 .buttonX {

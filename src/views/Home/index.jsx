@@ -1,10 +1,11 @@
-
+import { Link } from "react-router-dom";
 import Card from "../../components/Card";
 import Cards from "../../components/Cards";
 import SearchBar from "../../components/SearchBar";
-import styles from './Home.module.css'
+import styles from "./Home.module.css";
 
-const Home = ({ onSearch, cities, handleDelete, lastCity }) => {
+const Home = ({ onSearch, cities, handleDelete, lastCity, id}) => {
+  console.log("ciudad", lastCity)
   return (
     <>
       <div>
@@ -13,15 +14,18 @@ const Home = ({ onSearch, cities, handleDelete, lastCity }) => {
       <div className={styles.citiesContainer}>
         <div className={styles.inTheContainer}>
           {lastCity ? (
-            <Card
-              primary //React le da valor: true con default cuando se manda un atributo sin valor
-              name={lastCity.name}
-              img={lastCity.img}
-              max={lastCity.max}
-              min={lastCity.min}
-              speed={lastCity.wind} // viento en km/h
-              humidity={lastCity.humidity} // humedad
-            />
+            <Link className={styles.card} to={`/city/${id}`}>
+              <Card
+                primary //React le da valor: true con default cuando se manda un atributo sin valor
+                id={lastCity.id}
+                name={lastCity.name}
+                img={lastCity.img}
+                max={lastCity.max}
+                min={lastCity.min}
+                speed={lastCity.wind} // viento en km/h
+                humidity={lastCity.humidity} // humedad
+              />
+            </Link>
           ) : (
             <h1
               style={{

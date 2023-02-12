@@ -1,0 +1,41 @@
+.container {
+  width: 100%;
+  height: 75vh;
+}
+.landing {
+  height: 100%;
+  /* background: #ffffff60; */
+  backdrop-filter: blur(16px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcomeBox {
+  background-color: #0000006e;
+  width: 100%;
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 1.5rem;
+}
+
+.button {
+    background-color: #0000001e;
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 0.5px solid #0000000e;
+    border-radius: 10px;
+    color: white;
+}
+
+.button:hover {
+    background-color: #ffffff60;
+    border: 0.5px solid #ffffff10;
+    transition: .5s;
+}
