@@ -8,5 +8,10 @@
 .inTheContainer {
   display: flex;
   justify-content: space-between;
-  margin: 0 5px;
+  margin: 0 5px 0 0;
+}
+
+.card:hover {
+  background-color: #ffffff30;
+  transition: 1s;
 }
