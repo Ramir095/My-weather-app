@@ -2,7 +2,6 @@
 const apiKey = process.env.REACT_APP_APIKEY;
 
 export const fetchCoords = (lat, lon, setCity) => {
-    
     try {
         fetch(
           `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`
@@ -27,7 +26,7 @@ export const fetchCoords = (lat, lon, setCity) => {
                 country: recurso.sys.country,
                 visibility: recurso.visibility / 1000
               };
-              setCity(ciudad);
+              setCity([ciudad]);
             } else {
               alert("No encontramos datos tu ciudad");
             }

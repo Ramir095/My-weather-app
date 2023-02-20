@@ -5,7 +5,6 @@ import SearchBar from "../../components/SearchBar";
 import styles from "./Home.module.css";
 
 const Home = ({ onSearch, cities, handleDelete, lastCity, id}) => {
-  console.log("ciudad", lastCity)
   return (
     <>
       <div>
@@ -36,7 +35,7 @@ const Home = ({ onSearch, cities, handleDelete, lastCity, id}) => {
                 width: "100%",
               }}
             >
-              No se encontraron ciudades
+              No cities found
             </h1>
           )}
           <Cards cities={cities} handleDelete={handleDelete} />

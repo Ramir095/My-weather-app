@@ -10,7 +10,7 @@ import { fetchCoords } from "./controllers/fetchCoords";
 import Home from "./views/Home";
 
 function App() {
-  const [cities, setCities] = useState([]);
+  const [cities, setCities] = useState(JSON.parse(localStorage.getItem("cities")) ?? []);
 
   const handleDelete = (id) => {
     const newCities = cities.filter((c) => c.id !== id);
@@ -32,14 +32,18 @@ function App() {
 
   const lastCity = cities[cities.length - 1];
   const cityId = lastCity ? lastCity.id : ""
-  // console.log("idApp", console.log(cityId));
 
-  // useEffect(() => {
-  //   if(navigator.geolocation) // si el navegador tiene geolocalizacion
-  //     navigator.geolocation.getCurrentPosition((pos) => { // si la tiene pide la posicion actual
-  //       fetchCoords(pos.coords.latitude, pos.coords.longitude, setCities); // llama a las coordenadas pasandole estos atributos
-  //     })
-  // }, []);
+  useEffect(() => {
+    if(navigator.geolocation.getCurrentPosition) {// si el navegador tiene geolocalizacion
+      navigator.geolocation?.getCurrentPosition((pos) => { // si la tiene pide la posicion actual
+        fetchCoords(pos.coords.latitude, pos.coords.longitude, setCities); // llama a las coordenadas pasandole estos atributos
+      })
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("cities", JSON.stringify(cities))
+  }, [cities]) 
 
   return (
     <div className={styles.app}>
