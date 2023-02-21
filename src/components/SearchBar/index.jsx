@@ -18,7 +18,7 @@ const SearchBar = ({ onSearch }) => {
         <input
           className={styles.input}
           type="text"
-          placeholder="Agregar ciudad..."
+          placeholder="Search city..."
           onChange={(e) => setCity(e.target.value)}
         />
         <button type="submit" className={styles.button}>
