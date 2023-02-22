@@ -28,7 +28,9 @@ function App() {
   };
 
   function onSearch(ciudad) {
+    console.log("estado", cities);
     const cityFound = cities.some(
+      // (c) => c.name.toLowerCase().includes(ciudad.toLowerCase())
       (c) => c.name.toLowerCase() === ciudad.toLowerCase()
     );
     if (cityFound) return alert("la ciudad ya existe");
@@ -42,6 +44,7 @@ function App() {
 
   const lastCity = cities[cities.length - 1];
   const cityId = lastCity ? lastCity.id : "";
+  
 
   useEffect(() => {
     if (window.navigator.geolocation) {
