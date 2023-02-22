@@ -5,7 +5,6 @@ import { useState } from "react";
 
 const SearchBar = ({ onSearch }) => {
   const [city, setCity] = useState("");
-
   const handleSearch = (e) => {
     e.preventDefault();
     onSearch(city);
@@ -27,7 +26,7 @@ const SearchBar = ({ onSearch }) => {
       </div>
 
       <div className={styles.buttonContainer}>
-        <Link to="./about">
+        <Link to="/about">
           <button className={styles.buttonsRight}>About</button>
         </Link>
       </div>
